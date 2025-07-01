@@ -7,6 +7,32 @@ Part of the **ALX GraphQL** learning track.
 
 ## 🧱 New Feature: Error Boundary
 
+## ⚙️ Application-Level Integration of ErrorBoundary
+
+The `ErrorBoundary` component has been integrated into the app globally to catch rendering errors anywhere in the component tree.
+
+### 📄 Modified File
+`pages/_app.tsx`
+
+### 🔧 How It's Used
+
+We wrapped the main application component inside the `ErrorBoundary` to ensure any rendering issues are gracefully handled:
+
+```tsx
+import ErrorBoundary from '@/components/ErrorBoundary';
+import type { AppProps } from 'next/app';
+
+function MyApp({ Component, pageProps }: AppProps) {
+  return (
+    <ErrorBoundary>
+      <Component {...pageProps} />
+    </ErrorBoundary>
+  );
+}
+
+export default MyApp;
+
+
 ### 📁 File
 `components/ErrorBoundary.tsx`
 
