@@ -54,3 +54,18 @@ function App() {
     </ErrorBoundary>
   );
 }
+---
+
+## 🧪 Testing ErrorBoundary with ErrorProneComponent
+
+To verify that the `ErrorBoundary` component works as expected, we created a test component that deliberately throws a runtime error during rendering.
+
+### 📄 File
+`components/ErrorProneComponent.tsx`
+
+### 🧨 Component Code
+
+```tsx
+const ErrorProneComponent: React.FC = () => {
+  throw new Error('This is a test error!');
+};
